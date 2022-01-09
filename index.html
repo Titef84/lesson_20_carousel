@@ -13,16 +13,22 @@
 </head>
 
 <body>
-  <ul id="slides" class="slides">
-    <li class="slide active">Slide 1</li>
-    <li class="slide">Slide 2</li>
-    <li class="slide">Slide 3</li>
-    <li class="slide">Slide 4</li>
-    <li class="slide">Slide 5</li>
-  </ul>
-  <button class="controls" id="pause">Pause</button>
-  <button class="controls" id="prev">Prev</button>
-  <button class="controls" id="next">Next</button>
+
+  <div id="carousel" class="carousel">
+    <ul id="slides-container" class="slides">
+      <li class="slide active">Slide 1</li>
+      <li class="slide">Slide 2</li>
+      <li class="slide">Slide 3</li>
+      <li class="slide">Slide 4</li>
+      <li class="slide">Slide 5</li>
+    </ul>
+    <div id="controls-contaner" class="controls">
+      <span class="control control-pause" id="pause-btn">Pause</span>
+      <span class="control control-prev" id="prev-btn">Prev</span>
+      <span class="control control-next" id="next-btn">Next</span>
+    </div>
+  </div>
+
 
 
   <script src="assets/js/main.js" type="module"></script>
