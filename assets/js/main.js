@@ -1,4 +1,6 @@
 const slides = document.querySelectorAll('.slide');
+const indicators = document.querySelectorAll('.indicator');
+const indicatorsContainer = document.querySelectorAll('.indicators');
 const pauseBtn = document.querySelector('#pause-btn');
 const prevBtn = document.querySelector('#prev-btn');
 const nextBtn = document.querySelector('#next-btn');
@@ -10,8 +12,10 @@ let inteval = 2000;
 
 function gotoNth(n) {
   slides[currentSlide].classList.toggle('active');
+  indicators[currentSlide].classList.toggle('active');
   currentSlide = (n + slides.length) % slides.length;
   slides[currentSlide].classList.toggle('active');
+  indicators[currentSlide].classList.toggle('active');
 }
 
 function gotoNext() {
@@ -57,8 +61,19 @@ function prev() {
   pause();
   gotoPrev();
 }
+
+function indicate(e) {
+  const target = e.target;
+  if (target.classList.contains('indicator')) {
+    pause();
+    gotoNth(+target.getAttribute('data-slide-to'));
+  }
+}
+
 pauseBtn.addEventListener('click', pausePlay);
 prevBtn.addEventListener('click', prev);
 nextBtn.addEventListener('click', next);
 
 timerID = setInterval(gotoNext, inteval);
+
+indicatorsContainer.addEventListener('click', indicate);

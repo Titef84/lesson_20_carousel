@@ -49,3 +49,30 @@
 .slide:nth-of-type(5) {
   background: purple;
 }
+
+.indicators,
+.controls {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+.control {
+  background-color: aqua;
+  display: block;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.indicator {
+  background-color: aqua;
+  display: block;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.indicator.active {
+  background-color: blue;
+}
